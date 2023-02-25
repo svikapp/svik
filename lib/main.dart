@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:svik2/presentation/pages/homepage_view.dart';
 import 'package:svik2/presentation/pages/login_view.dart';
 import 'package:svik2/presentation/pages/signup_view.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       
       home: Scaffold(
-        body: loginView(),
+        body: HomePage(),
         
       ),
      
