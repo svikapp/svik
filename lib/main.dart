@@ -3,24 +3,8 @@ import 'package:svik2/presentation/pages/homepage_view.dart';
 import 'package:svik2/presentation/pages/login_view.dart';
 import 'package:svik2/presentation/pages/signup_view.dart';
 
-void main() => runApp(const MyApp());
+import 'app.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+void main() => runApp(const App());
 
-  
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      
-      home: Scaffold(
-        body: HomePage(),
-        
-      ),
-     
-      );
-    
-  }
-}
 
