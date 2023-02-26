@@ -1,26 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:svik2/presentation/pages/homepage_view.dart';
-import 'package:svik2/presentation/pages/login_view.dart';
-import 'package:svik2/presentation/pages/signup_view.dart';
+import 'package:flutter/cupertino.dart';
+import 'app.dart';
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      
-      home: Scaffold(
-        body: HomePage(),
-        
-      ),
-     
-      );
-    
-  }
-}
-
+void main() => runApp(const App());
