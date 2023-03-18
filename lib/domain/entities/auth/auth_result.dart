@@ -2,18 +2,18 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
-class AuthResult extends Equatable {
-  int code;
-  String message;
-  bool authentication;
-  AuthResult({
+class AuthResultEntity extends Equatable {
+  final int code;
+  final String message;
+  final bool authentication;
+  const AuthResultEntity({
     required this.code,
     required this.message,
     required this.authentication,
   });
   
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [code,message,authentication];
 
 
   Map<String, dynamic> toMap() {
@@ -24,8 +24,8 @@ class AuthResult extends Equatable {
     };
   }
 
-  factory AuthResult.fromMap(Map<String, dynamic> map) {
-    return AuthResult(
+  factory AuthResultEntity.fromMap(Map<String, dynamic> map) {
+    return AuthResultEntity(
       code: map['code'] as int,
       message: map['message'] as String,
       authentication: map['authentication'] as bool,
@@ -34,5 +34,5 @@ class AuthResult extends Equatable {
 
   String toJson() => json.encode(toMap());
 
-  factory AuthResult.fromJson(String source) => AuthResult.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory AuthResultEntity.fromJson(String source) => AuthResultEntity.fromMap(json.decode(source) as Map<String, dynamic>);
 }

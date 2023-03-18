@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:svik2/presentation/bloc/navigation_bloc/navigation_bloc.dart';
+import 'package:svik2/presentation/cubit/bottomnav_cubit/bottomnav_cubit.dart';
+import 'package:svik2/presentation/cubit/theme/theme_cubit.dart';
 import 'package:svik2/presentation/pages/homepage_view.dart';
 import 'package:svik2/presentation/pages/login_view.dart';
 import 'package:svik2/presentation/pages/signup_view.dart';
@@ -13,13 +14,20 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => NavigationBloc()..add(NavigateToFeedView()),
+          create: (context) => BottomNavCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ThemeCubit(),
         )
       ],
-      child: MaterialApp(
-        home: Scaffold(
-          body: HomePage(),
-        ),
+      child: BlocBuilder<ThemeCubit, ThemeData>(
+        builder: (context, theme) {
+          return MaterialApp(
+            theme: theme,
+            home: HomePage(),
+            
+          );
+        },
       ),
     );
   }

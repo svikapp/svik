@@ -1,13 +1,13 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:svik2/presentation/cubit/bottomnav_cubit/bottomnav_cubit.dart';
 import 'package:svik2/presentation/pages/conversations_view/conversations_view.dart';
 import 'package:svik2/presentation/pages/feed_view/feed_view.dart';
 import 'package:svik2/presentation/pages/friend_requests_view/friend_requests_view.dart';
 import 'package:svik2/presentation/pages/profile_view/profile_view.dart';
 import 'package:svik2/presentation/pages/search_view/search_view.dart';
 
-import '../bloc/navigation_bloc/navigation_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,13 +19,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NavigationBloc, SwitchTab>(
-      builder: (context, state) {
+    return BlocBuilder<BottomNavCubit, int>(
+      builder: (context, currentIndex) {
         return Scaffold(
           backgroundColor: Colors.white,
           body: IndexedStack(
-            index: state.index,
-            children: [
+            index: currentIndex,
+            children: const [
               FeedView(),
               ConversationsView(),
               SearchView(),
@@ -34,36 +34,12 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.white,
-            unselectedItemColor: Colors.grey,
             showSelectedLabels: false,
             showUnselectedLabels: false,
             type: BottomNavigationBarType.fixed,
-            currentIndex: state.index,
+            currentIndex: currentIndex,
             onTap: (index) {
-              switch (index) {
-                case 0:
-                  BlocProvider.of<NavigationBloc>(context)
-                      .add(NavigateToFeedView());
-                  break;
-                case 1:
-                  BlocProvider.of<NavigationBloc>(context)
-                      .add(NavigateToConversationsView());
-                  break;
-                case 2:
-                  BlocProvider.of<NavigationBloc>(context)
-                      .add(NavigateToSearchView());
-                  break;
-                case 3:
-                  BlocProvider.of<NavigationBloc>(context)
-                      .add(NavigateToFriendRequestsView());
-                  break;
-                case 4:
-                  BlocProvider.of<NavigationBloc>(context)
-                      .add(NavigateToProfileView());
-                  break;
-                default:
-              }
+              context.read<BottomNavCubit>().updateBottomNav(index);
             },
             items: const [
               BottomNavigationBarItem(
@@ -72,21 +48,25 @@ class _HomePageState extends State<HomePage> {
                 label: '',
               ),
               BottomNavigationBarItem(
-                  backgroundColor: Colors.black,
-                  icon: Icon(EvaIcons.messageCircle),
-                  label: ''),
+                backgroundColor: Colors.black,
+                icon: Icon(EvaIcons.messageCircle),
+                label: '',
+              ),
               BottomNavigationBarItem(
-                  backgroundColor: Colors.black,
-                  icon: Icon(EvaIcons.search),
-                  label: ''),
+                backgroundColor: Colors.black,
+                icon: Icon(EvaIcons.search),
+                label: '',
+              ),
               BottomNavigationBarItem(
-                  backgroundColor: Colors.black,
-                  icon: Icon(EvaIcons.bell),
-                  label: ''),
+                backgroundColor: Colors.black,
+                icon: Icon(EvaIcons.bell),
+                label: '',
+              ),
               BottomNavigationBarItem(
-                  backgroundColor: Colors.black,
-                  icon: Icon(EvaIcons.person),
-                  label: ''),
+                backgroundColor: Colors.black,
+                icon: Icon(EvaIcons.person),
+                label: '',
+              ),
             ],
           ),
         );

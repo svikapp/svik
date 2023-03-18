@@ -6,11 +6,11 @@ import 'package:equatable/equatable.dart';
 
 // This entitiy is used in friend list page
 
-class Friend extends Equatable {
-  String id;
-  String username;
-  String photourl;
-  Friend({
+class FriendEntity extends Equatable {
+  final String id;
+  final String username;
+  final String photourl;
+  const FriendEntity({
     required this.id,
     required this.username,
     required this.photourl,
@@ -18,12 +18,12 @@ class Friend extends Equatable {
   @override
   List<Object> get props => [id, username, photourl];
 
-  Friend copyWith({
+  FriendEntity copyWith({
     String? id,
     String? username,
     String? photourl,
   }) {
-    return Friend(
+    return FriendEntity(
       id: id ?? this.id,
       username: username ?? this.username,
       photourl: photourl ?? this.photourl,
@@ -38,8 +38,8 @@ class Friend extends Equatable {
     };
   }
 
-  factory Friend.fromMap(Map<String, dynamic> map) {
-    return Friend(
+  factory FriendEntity.fromMap(Map<String, dynamic> map) {
+    return FriendEntity(
       id: map['user_id'] as String,
       username: map['user_username'] as String,
       photourl: map['user_photourl'] as String,
@@ -48,7 +48,7 @@ class Friend extends Equatable {
 
   String toJson() => json.encode(toMap());
 
-  factory Friend.fromJson(String source) => Friend.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory FriendEntity.fromJson(String source) => FriendEntity.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   bool get stringify => true;
