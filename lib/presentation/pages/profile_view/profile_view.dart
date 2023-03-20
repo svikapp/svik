@@ -10,19 +10,21 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Profile View"),),
+      appBar: AppBar(
+        title: Text("Profile View"),
+        backgroundColor: Theme.of(context).primaryColor,
+      ),
       body: GestureDetector(
         onTap: () {
           context.read<ThemeCubit>().toggleTheme();
         },
         child: Container(
           width: 200,
-          height:200,
+          height: 200,
           color: Color.fromARGB(255, 167, 23, 23),
-          padding:EdgeInsets.all(5),
+          padding: EdgeInsets.all(5),
           child: Text("svik"),
           margin: EdgeInsets.all(10),
-          
         ),
       ),
     );
