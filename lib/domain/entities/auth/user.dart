@@ -1,23 +1,24 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
-
 // This entity is used in search page
 
 class UserEntity extends Equatable {
-  String id;
-  String username;
-  String photourl;
-  bool isFriend;
-  UserEntity(
-    this.id,
-    this.username,
-    this.photourl,
-    this.isFriend,
-  );
+  final String id;
+  final String username;
+  final String photourl;
+  final bool isFriend;
+  const UserEntity({
+    required this.id,
+    required this.username,
+    required this.photourl,
+    required this.isFriend,
+});
   @override
   List<Object> get props => [id, username, photourl, isFriend];
+
 
   UserEntity copyWith({
     String? id,
@@ -26,10 +27,10 @@ class UserEntity extends Equatable {
     bool? isFriend,
   }) {
     return UserEntity(
-      id ?? this.id,
-      username ?? this.username,
-      photourl ?? this.photourl,
-      isFriend ?? this.isFriend,
+      id: id ?? this.id,
+      username: username ?? this.username,
+      photourl: photourl ?? this.photourl,
+      isFriend: isFriend ?? this.isFriend,
     );
   }
 
@@ -44,10 +45,10 @@ class UserEntity extends Equatable {
 
   factory UserEntity.fromMap(Map<String, dynamic> map) {
     return UserEntity(
-      map['user_id'] as String,
-      map['user_username'] as String,
-      map['user_photourl'] as String,
-      map['isFriend'] as bool,
+      id: map['user_id'] as String,
+      username: map['user_username'] as String,
+      photourl: map['user_photourl'] as String,
+      isFriend: map['isFriend'] as bool,
     );
   }
 
