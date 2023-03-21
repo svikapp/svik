@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -32,4 +30,4 @@ class ProfileView extends StatelessWidget {
     );
   }
 }
->>>>>>> 5842fc144234c300a410c75532e4dfa3f9beaef5
+
