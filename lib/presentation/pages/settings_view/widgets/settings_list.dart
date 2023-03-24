@@ -23,6 +23,20 @@ class SettingsList extends StatelessWidget {
             
           },
         ),
+        ListTile(
+          leading: Icon(Icons.help),
+          title: Text("Help"),
+          onTap: () {
+            
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.money),
+          title: Text("Donate"),
+          onTap: () {
+            
+          },
+        ),
 
       ],
     );
