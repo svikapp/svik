@@ -16,14 +16,14 @@ class SettingsList extends StatelessWidget {
             
           },
         ),
-        ListTile(
-          leading: Icon(Icons.info),
-          title: Text("About"),
+         ListTile(
+          leading: Icon(Icons.attach_money),
+          title: Text("Donate"),
           onTap: () {
             
           },
         ),
-        ListTile(
+          ListTile(
           leading: Icon(Icons.help),
           title: Text("Help"),
           onTap: () {
@@ -31,12 +31,14 @@ class SettingsList extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: Icon(Icons.attach_money),
-          title: Text("Donate"),
+          leading: Icon(Icons.info),
+          title: Text("About"),
           onTap: () {
             
           },
         ),
+      
+       
 
       ],
     );
