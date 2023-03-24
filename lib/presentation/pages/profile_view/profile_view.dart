@@ -11,6 +11,9 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () => Navigator.pushNamed(context, '/setting'), icon: Icon(Icons.settings))
+        ],
         title: Text("Profile View"),
         backgroundColor: Theme.of(context).primaryColor,
       ),

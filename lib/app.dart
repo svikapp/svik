@@ -7,6 +7,8 @@ import 'package:svik2/presentation/cubit/bottomnav/bottomnav_cubit.dart';
 import 'package:svik2/presentation/cubit/theme/theme_cubit.dart';
 import 'package:svik2/presentation/pages/homepage_view.dart';
 import 'package:svik2/presentation/pages/login_view.dart';
+import 'package:svik2/presentation/pages/profile_view/profile_view.dart';
+import 'package:svik2/presentation/pages/settings_view/setting_view.dart';
 import 'package:svik2/presentation/pages/signup_view.dart';
 
 class App extends StatelessWidget {
@@ -26,6 +28,10 @@ class App extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeData>(
         builder: (context, theme) {
           return MaterialApp(
+            initialRoute:'/',
+            routes: {
+              "/setting":(context) => SettingsView()
+            },
                   theme: theme,
                   home: HomePage(),
                 );
