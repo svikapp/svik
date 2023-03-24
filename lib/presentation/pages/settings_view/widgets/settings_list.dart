@@ -31,7 +31,7 @@ class SettingsList extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: Icon(Icons.money),
+          leading: Icon(Icons.attach_money),
           title: Text("Donate"),
           onTap: () {
             
