@@ -1,46 +1,96 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:svik2/presentation/pages/settings_view/widgets/settings_group.dart';
 
 class SettingsList extends StatelessWidget {
-  const SettingsList({super.key});
+  SettingsList({super.key});
 
+  final List<List<Widget>> _settingsList = [
+    [
+      ListTile(
+        leading: Icon(EvaIcons.personOutline),
+        title: Text("Account"),
+        onTap: () {},
+      ),
+      ListTile(
+        leading: Icon(EvaIcons.heartOutline),
+        title: Text("Donate"),
+        onTap: () {},
+      ),
+    ],
+    [
+      ListTile(
+        leading: Icon(EvaIcons.sunOutline),
+        title: Text("Appearance"),
+        onTap: () {},
+      ),
+    ],
+    [
+      ListTile(
+        leading: Icon(EvaIcons.questionMarkCircleOutline),
+        title: Text("Help"),
+        onTap: () {},
+      ),
+      ListTile(
+        leading: Icon(EvaIcons.inboxOutline),
+        title: Text("Invite Friends"),
+        onTap: () {},
+      ),
+      ListTile(
+        leading: Icon(EvaIcons.infoOutline),
+        title: Text("About"),
+        onTap: () {},
+      ),
+    ]
+  ];
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-          ListTile(
-          leading: Icon(Icons.account_box_rounded),
-          title: Text("Account"),
-          onTap: () {
-            
-          },
-        ),
-         ListTile(
-          leading: Icon(Icons.attach_money),
-          title: Text("Donate"),
-          onTap: () {
-            
-          },
-        ),
-          ListTile(
-          leading: Icon(Icons.help),
-          title: Text("Help"),
-          onTap: () {
-            
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.info),
-          title: Text("About"),
-          onTap: () {
-            
-          },
-        ),
-      
-       
-
-      ],
+    return ListView.separated(
+      itemBuilder: (context, index) {
+        return SettingsGroup(children: _settingsList[index]);
+      },
+      separatorBuilder: (context, index) {
+        return const Divider(
+          height: 10,
+          // thickness: 2,
+        );
+      },
+      itemCount: _settingsList.length,
     );
+    // return ListView(
+    //   children: [
+    //      SettingsGroup(
+    //       children: [
+    //                 ListTile(
+    //       leading: Icon(EvaIcons.personOutline),
+    //       title: Text("Account"),
+    //       onTap: () {},
+    //     ),
+    //     ListTile(
+    //       leading: Icon(EvaIcons.heartOutline),
+    //       title: Text("Donate"),
+    //       onTap: () {},
+    //     ),
+    //     ListTile(
+    //       leading: Icon(EvaIcons.sunOutline),
+    //       title: Text("Appearance"),
+    //       onTap: () {},
+    //     ),
+    //       ],
+    //     ),
+    //     ListTile(
+    //       leading: Icon(EvaIcons.questionMarkCircleOutline),
+    //       title: Text("Help"),
+    //       onTap: () {},
+    //     ),
+    //     ListTile(
+    //       leading: Icon(EvaIcons.infoOutline),
+    //       title: Text("About"),
+    //       onTap: () {},
+    //     ),
+    //   ],
+    // );
   }
 }
