@@ -33,41 +33,43 @@ class _HomePageState extends State<HomePage> {
               ProfileView()
             ],
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            type: BottomNavigationBarType.fixed,
-            currentIndex: currentIndex,
-            onTap: (index) {
-              context.read<BottomNavCubit>().updateBottomNav(index);
-            },
-            items: const [
-              BottomNavigationBarItem(
-                backgroundColor: Colors.black,
-                icon: Icon(EvaIcons.home),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                backgroundColor: Colors.black,
-                icon: Icon(EvaIcons.messageCircle),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                backgroundColor: Colors.black,
-                icon: Icon(EvaIcons.search),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                backgroundColor: Colors.black,
-                icon: Icon(EvaIcons.bell),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                backgroundColor: Colors.black,
-                icon: Icon(EvaIcons.person),
-                label: '',
-              ),
-            ],
+          bottomNavigationBar: Material(
+            elevation: 0,
+            child: BottomNavigationBar(
+              elevation: 0,
+              type: BottomNavigationBarType.fixed,
+              currentIndex: currentIndex,
+              onTap: (index) {
+                context.read<BottomNavCubit>().updateBottomNav(index);
+              },
+              items: const [
+                BottomNavigationBarItem(
+                  backgroundColor: Colors.black,
+                  icon: Icon(EvaIcons.home),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  backgroundColor: Colors.black,
+                  icon: Icon(EvaIcons.messageCircle),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  backgroundColor: Colors.black,
+                  icon: Icon(EvaIcons.search),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  backgroundColor: Colors.black,
+                  icon: Icon(EvaIcons.bell),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  backgroundColor: Colors.black,
+                  icon: Icon(EvaIcons.person),
+                  label: '',
+                ),
+              ],
+            ),
           ),
         );
       },
