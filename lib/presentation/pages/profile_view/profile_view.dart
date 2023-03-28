@@ -14,7 +14,7 @@ class ProfileView extends StatelessWidget {
         actions: [
           IconButton(onPressed: () => Navigator.pushNamed(context, '/setting'), icon: Icon(Icons.settings))
         ],
-        title: Text("Profile View"),
+        title: Text("Profile"),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: GestureDetector(

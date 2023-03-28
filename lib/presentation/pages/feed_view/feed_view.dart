@@ -9,7 +9,7 @@ class FeedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Feed View"),
+        title: Text("Home"),
       ),
     );
   }

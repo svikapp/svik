@@ -8,7 +8,7 @@ class FriendRequestsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Frd Req View"),),
+      appBar: AppBar(title: Text("Friend Requests"),),
     );
   }
 }
