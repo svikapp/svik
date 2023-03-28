@@ -52,7 +52,7 @@ class AppTheme {
       ),
     );
   }
-
+  //hello
   static ThemeData get dark {
     Color textColor = Color(0xff1DA1F2).computeLuminance() > 0.5 ? Colors.black : Colors.white;
     Color bgColor = Colors.black;
