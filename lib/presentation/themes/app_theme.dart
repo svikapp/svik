@@ -10,9 +10,9 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         elevation: 0,
         color: Colors.grey[100],
-        iconTheme: IconThemeData(color: Color(0xff1DA1F2)),
+        iconTheme: IconThemeData(color: Color.fromARGB(255, 8, 8, 8)),
         titleTextStyle: TextStyle(
-          color: Color(0xff1DA1F2),
+          color: Color.fromARGB(255, 8, 8, 8),
           fontSize: 18.0,
           fontWeight: FontWeight.bold,
         ),
@@ -84,7 +84,7 @@ class AppTheme {
         iconTheme: IconThemeData(color: textColor),
         titleTextStyle: TextStyle(
           color: textColor,
-          fontSize: 20,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
         // titleTextStyle: TextStyle(
