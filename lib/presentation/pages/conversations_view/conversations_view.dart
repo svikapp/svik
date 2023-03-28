@@ -8,7 +8,7 @@ class ConversationsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Search View"),),
+      appBar: AppBar(title: Text("Chats"),),
     );
   }
 }
