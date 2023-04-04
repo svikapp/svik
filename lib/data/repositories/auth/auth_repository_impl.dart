@@ -23,8 +23,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<AuthFailure, SessionResultEntity>> verifySession() {
-    // TODO: implement signup
-    throw UnimplementedError();
+  Future<Either<Failure, SessionResultEntity>> verifySession()async {
+    try {
+      final res = await authDataSource.verifySession();
+      return Right(res);
+    } catch (e) {
+      return Left(SessionFailure());
+    }
   }
 }

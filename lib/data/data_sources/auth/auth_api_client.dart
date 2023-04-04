@@ -10,18 +10,16 @@ class AuthApiClient {
   // Future<Map<String, dynamic>> login(String email, String password) async {}
 
   Future<Map<String, dynamic>> verifySession(String token) async {
-
     final response = await dioClient.get(
-      '/session',
+      '/user/session',
       options: Options(
         headers: {'Authorization': 'Bearer $token'},
       ),
     );
     final data = jsonDecode(response.data);
-    if(data['verified']){
+    if (data['verified']) {
       return data;
-    }
-    else{
+    } else {
       throw ApiException(message: data['message']);
     }
   }

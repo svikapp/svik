@@ -31,6 +31,6 @@ abstract class AuthRepository {
     String password,
   );
 
-  Future<Either<AuthFailure,SessionResultEntity>> verifySession();
+  Future<Either<Failure,SessionResultEntity>> verifySession();
   
 }

@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:svik2/injection_container.dart';
+import 'package:svik2/presentation/bloc/auth/auth_bloc.dart';
 import 'package:svik2/presentation/cubit/bottomnav/bottomnav_cubit.dart';
 import 'package:svik2/presentation/cubit/theme/theme_cubit.dart';
 import 'package:svik2/presentation/pages/homepage_view.dart';
@@ -12,7 +14,10 @@ import 'package:svik2/presentation/pages/settings/setting_view.dart';
 import 'package:svik2/presentation/pages/settings/views/about_view/about_view.dart';
 import 'package:svik2/presentation/pages/settings/views/set_theme_view/set_theme_view.dart';
 import 'package:svik2/presentation/pages/signup_view.dart';
+import 'package:svik2/presentation/pages/splash_view.dart';
 import 'package:svik2/presentation/themes/app_theme.dart';
+
+import 'domain/usecases/auth/verify_session.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -26,6 +31,11 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ThemeCubit(),
+        ),
+        BlocProvider(
+          create: (context) => AuthBloc(
+            verifySession: gt<VerifySession>(),
+          )..add(AppStarted()),
         )
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
@@ -33,6 +43,7 @@ class App extends StatelessWidget {
           return MaterialApp(
             initialRoute: '/',
             routes: {
+              "/":(context) => SplashView(),
               "/setting": (context) => SettingsView(),
               "/settings/theme": (context) => SetThemeView(),
               "/settings/about": (context) => AboutView()
@@ -40,7 +51,7 @@ class App extends StatelessWidget {
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
             themeMode: themeMode,
-            home: HomePage(),
+            // home: HomePage(),
             debugShowCheckedModeBanner: false,
           );
         },

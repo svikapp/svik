@@ -22,7 +22,7 @@ class AuthDataSourceImpl implements AuthDataSource {
         verified: true,
       );
     } on CacheException {
-      throw AuthException(message: "no token");
+      throw AuthException(message: "no token available");
     } on ApiException catch (e) {
       throw AuthException(message: e.message);
     }
