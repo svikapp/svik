@@ -8,8 +8,8 @@ import 'package:svik2/presentation/pages/login_view.dart';
 
 import '../bloc/auth/auth_bloc.dart';
 
-class SplashView extends StatelessWidget {
-  const SplashView({super.key});
+class DeceiderView extends StatelessWidget {
+  const DeceiderView({super.key});
 
   @override
   Widget build(BuildContext context) {

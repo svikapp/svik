@@ -20,5 +20,10 @@ class CacheHelper {
     await _prefs.setString('token', token);
   }
 
+  Future<void> deleteToken()async{
+    final isRemoved = await _prefs.remove('token');
+    !isRemoved?throw CacheException():null;
+  }
+
   // other helper methods...
 }
