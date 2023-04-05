@@ -35,5 +35,3 @@ flutter run
 
 <p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">in your terminal or command prompt.</p>
 
-[![GitHub license](https://img.shields.io/cirrus/github/Saffron-codes/svik2/readme?color=bisque&label=flutter%20run&logo=lol&logoColor=red)](https://github.com/Saffron-codes/svik2/blob/mreadme/LICENSE)
-
