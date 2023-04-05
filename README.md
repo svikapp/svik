@@ -1,8 +1,3 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="./style.css">
-</head>
-
-
 <h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">Svik 2</h1>
 
 <p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">Compared to its predecessor, Svik 2 represents a major leap forward in terms of functionality and security.<br><br>
