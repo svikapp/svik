@@ -31,6 +31,8 @@ abstract class AuthRepository {
     String password,
   );
 
+  Future<Either<AuthFailure,void>> logout();
+
   Future<Either<Failure,SessionResultEntity>> verifySession();
   
 }

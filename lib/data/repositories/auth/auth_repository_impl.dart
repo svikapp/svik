@@ -1,3 +1,4 @@
+import 'package:svik2/core/error/exceptions.dart';
 import 'package:svik2/data/data_sources/auth/auth_datasource.dart';
 import 'package:svik2/domain/entities/auth/auth_result.dart';
 import 'package:svik2/core/error/failures.dart';
@@ -23,12 +24,21 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, SessionResultEntity>> verifySession()async {
+  Future<Either<Failure, SessionResultEntity>> verifySession() async {
     try {
       final res = await authDataSource.verifySession();
       return Right(res);
     } catch (e) {
       return Left(SessionFailure());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, void>> logout() async {
+    try {
+      return Right(await authDataSource.logout());
+    } on AuthException catch (e) {
+      return Left(AuthFailure(message: e.message));
     }
   }
 }
