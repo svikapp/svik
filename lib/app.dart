@@ -40,7 +40,7 @@ class App extends StatelessWidget {
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
             themeMode: themeMode,
-            home: HomePage(),
+            home: SignupPage(),
             debugShowCheckedModeBanner: false,
           );
         },
