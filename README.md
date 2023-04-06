@@ -35,3 +35,19 @@ flutter run
 
 <p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">in your terminal or command prompt.</p>
 
+## Dependencies
+
+Here are the packages used in this Flutter project:
+
+![](https://img.shields.io/pub/v/dio?color=blue&label=dio)
+
+![](https://img.shields.io/pub/v/flutter_bloc?color=purple&label=flutter_bloc)
+
+![](https://img.shields.io/pub/v/shared_preferences?color=orange&label=shared_preferences)
+
+
+![](https://img.shields.io/pub/v/get_it?color=green&label=get_it)
+
+
+## License
+This project is licensed under the Apache License 2.0. You can read the full text of the license [here](https://www.apache.org/licenses/LICENSE-2.0).
