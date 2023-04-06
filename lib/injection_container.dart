@@ -10,35 +10,35 @@ import 'package:svik2/presentation/bloc/auth/auth_bloc.dart';
 
 import 'data/local/cache_helper.dart';
 
-final gt = GetIt.instance;
+final sl = GetIt.instance;
 
 Future<void> init() async {
   // Initializing a new instance of Dio client and setting the base url to the API endpoint.
   final dioClient = Dio();
   dioClient.options.baseUrl = "htttp://localhost:3000";
   // Blocs
-  gt.registerLazySingleton<AuthBloc>(() => AuthBloc(verifySession: gt<VerifySession>()));
+  sl.registerLazySingleton<AuthBloc>(() => AuthBloc(verifySession: sl<VerifySession>()));
   // Usecases
-  gt.registerLazySingleton<VerifySession>(() => VerifySession(authRepository: gt<AuthRepository>()));
+  sl.registerLazySingleton<VerifySession>(() => VerifySession(authRepository: sl<AuthRepository>()));
   // Repositories
-  gt.registerLazySingleton<AuthRepository>(
-      () => AuthRepositoryImpl(authDataSource: gt()));
+  sl.registerLazySingleton<AuthRepository>(
+      () => AuthRepositoryImpl(authDataSource: sl()));
   
   // Datasources and Helpers
-  gt.registerLazySingleton<AuthDataSource>(
+  sl.registerLazySingleton<AuthDataSource>(
     () => AuthDataSourceImpl(
-      authApiClient: gt<AuthApiClient>(),
-      cacheHelper: gt<CacheHelper>(),
+      authApiClient: sl<AuthApiClient>(),
+      cacheHelper: sl<CacheHelper>(),
     ),
   );
-  gt.registerLazySingleton(() => CacheHelper(gt<SharedPreferences>()));
+  sl.registerLazySingleton(() => CacheHelper(sl<SharedPreferences>()));
 
   // Api Clients for different features
-  gt.registerLazySingleton(() => AuthApiClient(dioClient: gt<Dio>()));
+  sl.registerLazySingleton(() => AuthApiClient(dioClient: sl<Dio>()));
 
   //! External
   final sharedPreferences = await SharedPreferences.getInstance();
-  gt.registerLazySingleton(() => sharedPreferences);
+  sl.registerLazySingleton(() => sharedPreferences);
 
-  gt.registerLazySingleton(() => dioClient);
+  sl.registerLazySingleton(() => dioClient);
 }

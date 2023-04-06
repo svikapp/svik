@@ -28,7 +28,7 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => AuthBloc(
-            verifySession: gt<VerifySession>(),
+            verifySession: sl<VerifySession>(),
           )..add(AppStarted()),
         )
       ],
