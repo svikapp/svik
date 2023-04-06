@@ -11,6 +11,7 @@ import 'package:svik2/presentation/pages/deceider_view.dart';
 import 'package:svik2/presentation/themes/app_theme.dart';
 
 import 'domain/usecases/auth/verify_session.dart';
+import 'presentation/pages/signup_view.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
