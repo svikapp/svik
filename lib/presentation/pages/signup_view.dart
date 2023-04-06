@@ -20,7 +20,7 @@ class SignupPage extends StatelessWidget {
             },
             icon: Icon(
               Icons.arrow_back_ios,
-              size: 20,
+              size: 15,
               color: Colors.black,
             )),
       ),
@@ -45,7 +45,7 @@ class SignupPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 15,
                         ),
                         Text(
                           "Create an Account",
@@ -55,7 +55,7 @@ class SignupPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 15,
                         )
                       ],
                     ),
@@ -83,8 +83,8 @@ class SignupPage extends StatelessWidget {
                                 right: BorderSide(color: Colors.black),
                                 left: BorderSide(color: Colors.black))),
                         child: MaterialButton(
-                          minWidth: double.infinity,
-                          height: 60,
+                          minWidth: double.minPositive,
+                          height: 45,
                           onPressed: () {},
                           color: Color.fromARGB(255, 16, 158, 99),
                           shape: RoundedRectangleBorder(
@@ -100,7 +100,7 @@ class SignupPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

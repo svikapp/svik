@@ -1,16 +1,53 @@
-# svik2
+<h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">Svik 2</h1>
 
-A new Flutter project.
+<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">Compared to its predecessor, Svik 2 represents a major leap forward in terms of functionality and security.<br><br>
+While the original Svik app was certainly popular, it lacked a custom backend server and robust security features that are essential in today's mobile landscape. With its innovative features and custom backend server, Svik 2 is a secure and reliable choice for users who demand the best from their mobile apps.
+<br><br>
+From an advertising perspective, this means that Svik 2 is an even more attractive platform for brands and marketers, as they can be confident that their messages are reaching a highly engaged and secure audience.
+<br><br>
+Whether you're a long-time Svik user or a newcomer to the platform, Svik 2 is the clear choice for those who want the best in mobile technology and advertising. Try it today and experience the future of mobile apps.</p>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+<h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">To clone this project</h1>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">To clone this project, simply copy the below command and paste it in your command line interface : </p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/Saffron-codes/svik2.git
+```
+
+<h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">To retrieve flutter packages</h1>
+
+<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">To retrieve the required packages for a Flutter project, you can use the below command :</p>
+
+```dart
+flutter pub get
+```
+
+<h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">To launch the project</h1>
+
+<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">To run the Flutter project, simply navigate to the project directory and use the below command : </p>
+
+```dart
+flutter run
+```
+
+<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">in your terminal or command prompt.</p>
+
+## Dependencies
+
+Here are the packages used in this Flutter project:
+
+![](https://img.shields.io/pub/v/dio?color=blue&label=dio)
+
+![](https://img.shields.io/pub/v/flutter_bloc?color=purple&label=flutter_bloc)
+
+![](https://img.shields.io/pub/v/shared_preferences?color=orange&label=shared_preferences)
+
+
+![](https://img.shields.io/pub/v/get_it?color=green&label=get_it)
+
+
+## License
+This project is licensed under the Apache License 2.0. You can read the full text of the license [here](https://www.apache.org/licenses/LICENSE-2.0).
