@@ -11,16 +11,28 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl({required this.authDataSource});
   @override
   Future<Either<AuthFailure, AuthResultEntity>> login(
-      String email, String password) {
-    // TODO: implement login
-    throw UnimplementedError();
+    String email,
+    String password,
+  ) async {
+    try {
+      return Right(
+          await authDataSource.login(email: email, password: password));
+    } on AuthException catch (e) {
+      return Left(AuthFailure(message: e.message));
+    }
   }
 
   @override
   Future<Either<AuthFailure, AuthResultEntity>> signup(
-      String username, String email, String password) {
-    // TODO: implement signup
-    throw UnimplementedError();
+    String username,
+    String email,
+    String password,
+  )async {
+        try {
+      return Right(await authDataSource.signup(username: username,email: email,password: password));
+    } on AuthException catch (e) {
+      return Left(AuthFailure(message: e.message));
+    }
   }
 
   @override

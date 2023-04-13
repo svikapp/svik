@@ -1,11 +1,15 @@
 import 'package:svik2/core/error/exceptions.dart';
 import 'package:svik2/data/data_sources/auth/auth_api_client.dart';
 import 'package:svik2/data/local/cache_helper.dart';
+import 'package:svik2/data/models/auth/auth_result.dart';
 import 'package:svik2/data/models/auth/session_result.dart';
 
 // This is the interface for the data source that provides authentication-related functionality.
 // This interface defines the contract between the data layer and the domain layer.
 abstract class AuthDataSource {
+
+  Future<AuthResult> signup({required String username,required String email,required String password});
+  Future<AuthResult> login({required String email,required String password});
   // This method verifies the user's authentication session and returns the result as a `SessionResult`.
   // The [SessionResult] type is defined in the domain layer and is used to encapsulate the result of the verification process.
   Future<SessionResult> verifySession();
@@ -42,6 +46,28 @@ class AuthDataSourceImpl implements AuthDataSource {
       await cacheHelper.deleteToken();
     } on CacheException{
       throw AuthException(message: "Error Logging out");
+    }
+  }
+  
+  @override
+  Future<AuthResult> login({required String email, required String password})async {
+    try {
+      final response = await authApiClient.login(email: email, password: password);
+      await cacheHelper.saveToken(response['message']);
+      return AuthResult.fromJson(response);
+    } on ApiException catch(e) {
+      throw AuthException(message:e. message);
+    }
+  }
+  
+  @override
+  Future<AuthResult> signup({required String username, required String email, required String password})async {
+    try {
+      final response = await authApiClient.signup(username: username, email: email, password: password);
+      await cacheHelper.saveToken(response['message']);
+      return AuthResult.fromJson(response);
+    } on ApiException catch(e) {
+      throw AuthException(message:e. message);
     }
   }
 }

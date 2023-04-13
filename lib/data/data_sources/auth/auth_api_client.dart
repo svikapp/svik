@@ -23,4 +23,38 @@ class AuthApiClient {
       throw ApiException(message: data['message']);
     }
   }
+
+  Future<Map<String, dynamic>> signup({
+    required String username,
+    required String email,
+    required String password,
+  }) async {
+    final response = await dioClient.get(
+      '/user/signup',
+      options: Options(),
+    );
+    final data = jsonDecode(response.data);
+    if (response.statusCode == 201) {
+      return data;
+    } else {
+      throw ApiException(message: data['message']);
+    }
+  }
+
+
+    Future<Map<String, dynamic>> login({
+    required String email,
+    required String password,
+  }) async {
+    final response = await dioClient.get(
+      '/user/login',
+      options: Options(),
+    );
+    final data = jsonDecode(response.data);
+    if (response.statusCode == 201) {
+      return data;
+    } else {
+      throw ApiException(message: data['message']);
+    }
+  }
 }

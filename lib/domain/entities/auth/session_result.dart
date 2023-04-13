@@ -1,5 +1,10 @@
-class SessionResultEntity {
+import 'package:equatable/equatable.dart';
+
+class SessionResultEntity extends Equatable {
   final String message;
   final bool verified;
-  SessionResultEntity({required this.message,required this.verified});
+  const SessionResultEntity({required this.message, required this.verified});
+
+  @override
+  List<Object?> get props => [message, verified];
 }
