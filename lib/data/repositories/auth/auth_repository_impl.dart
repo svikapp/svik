@@ -28,7 +28,7 @@ class AuthRepositoryImpl implements AuthRepository {
     String email,
     String password,
   )async {
-        try {
+    try {
       return Right(await authDataSource.signup(username: username,email: email,password: password));
     } on AuthException catch (e) {
       return Left(AuthFailure(message: e.message));

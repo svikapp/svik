@@ -26,10 +26,26 @@ abstract class AuthRepository {
     String password,
   );
 
+
+  /// Signup the user with the given [email] and [password].
+  ///
+  /// Returns a [Future] that completes with an [Either] object containing either an [AuthFailure]
+  /// if there was an error with the signup process, or an [AuthResultEntity] if the signup was successful.
+  ///
+  /// Throws an [AuthException] if there is a problem communicating with the authentication server.
+
   Future<Either<AuthFailure, AuthResultEntity>> login(
     String email,
     String password,
   );
+
+
+  /// logs out the user 
+  ///
+  /// Returns a [Future] that completes with an [Either] object containing either an [AuthFailure]
+  /// if there was an error with the signup process, or an [void] if the signup was successful.
+  ///
+  /// Throws an [AuthException] if there is a problem communicating with the authentication server.
 
   Future<Either<AuthFailure,void>> logout();
 

@@ -12,5 +12,4 @@ class VerifySession implements UseCase<SessionResultEntity,NoParams> {
   Future<Either<Failure, SessionResultEntity>> call(NoParams params)async {
     return await authRepository.verifySession();
   }
-  
 }
