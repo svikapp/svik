@@ -20,23 +20,14 @@ class _loginViewState extends State<loginView> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: const Text("Sign in"),
-          backgroundColor: Colors.lightGreen,
+          title: const Text("Login"),
+          
         ),
         body: Padding(
             padding: const EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
-                Container(
-                  width: 50,
-                  height: 100,
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(100),
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/svik.jpg'),
-                          fit: BoxFit.cover)),
-                ),
+               SizedBox(height: 70,),
                 // Container(
                 //     alignment: Alignment.center,
                 //     padding: const EdgeInsets.all(10),
