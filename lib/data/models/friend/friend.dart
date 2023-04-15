@@ -1,4 +1,4 @@
-import 'package:svik2/domain/entities/friend/friend.dart';
+import 'package:svik/domain/entities/friend/friend.dart';
 
 class Friend extends FriendEntity {
   const Friend({required super.id, required super.username, required super.photourl});

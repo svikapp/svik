@@ -1,12 +1,12 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:svik2/presentation/cubit/bottomnav/bottomnav_cubit.dart';
-import 'package:svik2/presentation/pages/conversations_view/conversations_view.dart';
-import 'package:svik2/presentation/pages/feed_view/feed_view.dart';
-import 'package:svik2/presentation/pages/friend_requests_view/friend_requests_view.dart';
-import 'package:svik2/presentation/pages/profile_view/profile_view.dart';
-import 'package:svik2/presentation/pages/search_view/search_view.dart';
+import 'package:svik/presentation/cubit/bottomnav/bottomnav_cubit.dart';
+import 'package:svik/presentation/pages/conversations_view/conversations_view.dart';
+import 'package:svik/presentation/pages/feed_view/feed_view.dart';
+import 'package:svik/presentation/pages/friend_requests_view/friend_requests_view.dart';
+import 'package:svik/presentation/pages/profile_view/profile_view.dart';
+import 'package:svik/presentation/pages/search_view/search_view.dart';
 
 
 class HomePage extends StatefulWidget {

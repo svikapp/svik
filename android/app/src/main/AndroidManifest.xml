@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.svik2">
+    package="com.svik">
    <application
-        android:label="svik2"
+        android:label="svik"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

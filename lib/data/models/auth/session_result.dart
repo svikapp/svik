@@ -1,4 +1,4 @@
-import 'package:svik2/domain/entities/auth/session_result.dart';
+import 'package:svik/domain/entities/auth/session_result.dart';
 
 class SessionResult extends SessionResultEntity {
   final String message;

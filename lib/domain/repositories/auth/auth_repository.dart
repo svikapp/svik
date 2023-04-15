@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:svik2/core/error/failures.dart';
-import 'package:svik2/domain/entities/auth/auth_result.dart';
+import 'package:svik/core/error/failures.dart';
+import 'package:svik/domain/entities/auth/auth_result.dart';
 
 import '../../entities/auth/session_result.dart';
 

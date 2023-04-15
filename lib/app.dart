@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:svik2/injection_container.dart';
-import 'package:svik2/presentation/bloc/auth/auth_bloc.dart';
-import 'package:svik2/presentation/cubit/bottomnav/bottomnav_cubit.dart';
-import 'package:svik2/presentation/cubit/theme/theme_cubit.dart';
-import 'package:svik2/presentation/pages/settings/setting_view.dart';
-import 'package:svik2/presentation/pages/settings/views/about_view/about_view.dart';
-import 'package:svik2/presentation/pages/settings/views/set_theme_view/set_theme_view.dart';
-import 'package:svik2/presentation/pages/deceider_view.dart';
-import 'package:svik2/presentation/themes/app_theme.dart';
+import 'package:svik/injection_container.dart';
+import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
+import 'package:svik/presentation/cubit/bottomnav/bottomnav_cubit.dart';
+import 'package:svik/presentation/cubit/theme/theme_cubit.dart';
+import 'package:svik/presentation/pages/authentication/login_view.dart';
+import 'package:svik/presentation/pages/settings/setting_view.dart';
+import 'package:svik/presentation/pages/settings/views/about_view/about_view.dart';
+import 'package:svik/presentation/pages/settings/views/set_theme_view/set_theme_view.dart';
+import 'package:svik/presentation/pages/deceider_view.dart';
+import 'package:svik/presentation/themes/app_theme.dart';
 
 import 'domain/usecases/auth/verify_session.dart';
-import 'presentation/pages/signup_view.dart';
+import 'presentation/pages/authentication/signup_view.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -40,7 +41,9 @@ class App extends StatelessWidget {
               "/":(context) => const DeceiderView(),
               "/setting": (context) => SettingsView(),
               "/settings/theme": (context) => SetThemeView(),
-              "/settings/about": (context) => AboutView()
+              "/settings/about": (context) => AboutView(),
+              "/login":(context) => LoginView(),
+              "/signup":(context) => SignupPage(),
             },
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:svik2/presentation/cubit/theme/theme_cubit.dart';
-import 'package:svik2/presentation/themes/app_theme.dart';
+import 'package:svik/presentation/cubit/theme/theme_cubit.dart';
+import 'package:svik/presentation/themes/app_theme.dart';
 
 class SetThemeView extends StatelessWidget {
   const SetThemeView({super.key});

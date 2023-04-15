@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:svik2/core/usecases/usecase.dart';
-import 'package:svik2/domain/usecases/auth/verify_session.dart';
+import 'package:svik/core/usecases/usecase.dart';
+import 'package:svik/domain/usecases/auth/verify_session.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

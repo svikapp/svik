@@ -1,4 +1,4 @@
-package com.example.svik2
+package com.svik
 
 import io.flutter.embedding.android.FlutterActivity
 

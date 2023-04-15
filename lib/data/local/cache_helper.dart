@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:svik2/core/error/exceptions.dart';
+import 'package:svik/core/error/exceptions.dart';
 
 class CacheHelper {
   final SharedPreferences _prefs;

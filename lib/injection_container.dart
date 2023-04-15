@@ -1,12 +1,12 @@
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:svik2/data/data_sources/auth/auth_api_client.dart';
-import 'package:svik2/data/data_sources/auth/auth_datasource.dart';
-import 'package:svik2/data/repositories/auth/auth_repository_impl.dart';
-import 'package:svik2/domain/repositories/auth/auth_repository.dart';
-import 'package:svik2/domain/usecases/auth/verify_session.dart';
-import 'package:svik2/presentation/bloc/auth/auth_bloc.dart';
+import 'package:svik/data/data_sources/auth/auth_api_client.dart';
+import 'package:svik/data/data_sources/auth/auth_datasource.dart';
+import 'package:svik/data/repositories/auth/auth_repository_impl.dart';
+import 'package:svik/domain/repositories/auth/auth_repository.dart';
+import 'package:svik/domain/usecases/auth/verify_session.dart';
+import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
 
 import 'data/local/cache_helper.dart';
 

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:svik2/core/error/failures.dart';
-import 'package:svik2/core/usecases/usecase.dart';
-import 'package:svik2/domain/entities/auth/auth_result.dart';
-import 'package:svik2/domain/repositories/auth/auth_repository.dart';
+import 'package:svik/core/error/failures.dart';
+import 'package:svik/core/usecases/usecase.dart';
+import 'package:svik/domain/entities/auth/auth_result.dart';
+import 'package:svik/domain/repositories/auth/auth_repository.dart';
 
 // SignupUser calls the signup method from AuthRepository
 class SignupUser implements UseCase<AuthResultEntity, SignupParams> {

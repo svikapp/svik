@@ -1,4 +1,4 @@
-import 'package:svik2/domain/entities/auth/user.dart';
+import 'package:svik/domain/entities/auth/user.dart';
 
 class UserModel extends UserEntity {
   const UserModel({

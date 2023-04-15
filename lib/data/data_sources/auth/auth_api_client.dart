@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:svik2/core/error/exceptions.dart';
+import 'package:svik/core/error/exceptions.dart';
 
 class AuthApiClient {
   final Dio dioClient;

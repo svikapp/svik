@@ -1,10 +1,10 @@
-import 'package:svik2/core/error/exceptions.dart';
-import 'package:svik2/data/data_sources/auth/auth_datasource.dart';
-import 'package:svik2/domain/entities/auth/auth_result.dart';
-import 'package:svik2/core/error/failures.dart';
+import 'package:svik/core/error/exceptions.dart';
+import 'package:svik/data/data_sources/auth/auth_datasource.dart';
+import 'package:svik/domain/entities/auth/auth_result.dart';
+import 'package:svik/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:svik2/domain/entities/auth/session_result.dart';
-import 'package:svik2/domain/repositories/auth/auth_repository.dart';
+import 'package:svik/domain/entities/auth/session_result.dart';
+import 'package:svik/domain/repositories/auth/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthDataSource authDataSource;

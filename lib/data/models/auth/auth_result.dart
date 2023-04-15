@@ -1,4 +1,4 @@
-import 'package:svik2/domain/entities/auth/auth_result.dart';
+import 'package:svik/domain/entities/auth/auth_result.dart';
 
 class AuthResult extends AuthResultEntity {
   const AuthResult(
