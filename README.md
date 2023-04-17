@@ -52,6 +52,14 @@ Here are the packages used in this Flutter project:
 
 ![](https://img.shields.io/pub/v/get_it?color=green&label=get_it)
 
+## Screenshots
+
+<img src="screenshots/signup.png" alt="Signup Page" height="400">
+
+<img src="screenshots/login.png" alt="Login Page" height="400">
+
+
+
 
 ## License
 This project is licensed under the Apache License 2.0. You can read the full text of the license [here](https://www.apache.org/licenses/LICENSE-2.0).
