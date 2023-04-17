@@ -9,7 +9,7 @@ class VerifySession implements UseCase<SessionResultEntity,NoParams> {
 
   VerifySession({required this.authRepository});
   @override
-  Future<Either<Failure, SessionResultEntity>> call(NoParams params)async {
+  Future<Either<SessionFailure, SessionResultEntity>> call(NoParams params)async {
     return await authRepository.verifySession();
   }
 }

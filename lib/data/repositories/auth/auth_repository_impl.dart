@@ -36,12 +36,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, SessionResultEntity>> verifySession() async {
+  Future<Either<SessionFailure, SessionResultEntity>> verifySession() async {
     try {
       final res = await authDataSource.verifySession();
       return Right(res);
-    } catch (e) {
-      return Left(SessionFailure());
+    }on AuthException catch (e) {
+      return Left(SessionFailure(message: e.message));
     }
   }
 

@@ -29,10 +29,7 @@ class AuthDataSourceImpl implements AuthDataSource {
     try {
       final token = await cacheHelper.getToken();
       final result = await authApiClient.verifySession(token);
-      return SessionResult(
-        message: result['message'],
-        verified: true,
-      );
+      return SessionResult.fromJson(result);
     } on CacheException {
       throw AuthException(message: "no token available");
     } on ApiException catch (e) {

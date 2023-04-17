@@ -42,6 +42,58 @@ class AppTheme {
         showUnselectedLabels: false,
         showSelectedLabels: false,
       ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.white,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          borderSide: BorderSide(
+            color: Color(0xff1DA1F2),
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          borderSide: BorderSide(
+            color: Color(0xff1DA1F2),
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          borderSide: BorderSide(
+            color: Colors.red,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          borderSide: BorderSide(
+            color: Colors.red,
+          ),
+        ),
+        labelStyle: TextStyle(
+          color: Colors.grey,
+        ),
+        hintStyle: TextStyle(
+          color: Colors.grey,
+        ),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Color(0xff1DA1F2),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          minimumSize: Size(150.0, 50.0),
+        ),
+      ),
+      buttonTheme: ButtonThemeData(
+        buttonColor: Color(0xff1DA1F2),
+        textTheme: ButtonTextTheme.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+        minWidth: 150.0,
+        height: 50.0,
+      ),
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith((states) => Colors.blue),
       ),
@@ -52,9 +104,12 @@ class AppTheme {
       ),
     );
   }
+
   //hello
   static ThemeData get dark {
-    Color textColor = Color(0xff1DA1F2).computeLuminance() > 0.5 ? Colors.black : Colors.white;
+    Color textColor = Color(0xff1DA1F2).computeLuminance() > 0.5
+        ? Colors.black
+        : Colors.white;
     Color bgColor = Colors.black;
     return ThemeData.dark().copyWith(
       scaffoldBackgroundColor: bgColor,
@@ -97,6 +152,34 @@ class AppTheme {
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: bgColor,
           statusBarIconBrightness: Brightness.light,
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.grey[900],
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Color(0xff1DA1F2), width: 2.0),
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Color.fromARGB(255, 97, 97, 97), width: 1.0),
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: Color.fromARGB(255, 97, 97, 97), width: 1.0),
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        labelStyle: TextStyle(color: Colors.grey[400]),
+        hintStyle: TextStyle(color: Colors.grey[400]),
+        errorStyle: TextStyle(color: Colors.redAccent),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: Color(0xff1DA1F2),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          minimumSize: Size(150.0, 50.0),
         ),
       ),
       cardTheme: CardTheme(

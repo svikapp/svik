@@ -8,7 +8,7 @@ import 'package:svik/presentation/pages/authentication/login_view.dart';
 import 'package:svik/presentation/pages/settings/setting_view.dart';
 import 'package:svik/presentation/pages/settings/views/about_view/about_view.dart';
 import 'package:svik/presentation/pages/settings/views/set_theme_view/set_theme_view.dart';
-import 'package:svik/presentation/pages/deceider_view.dart';
+import 'package:svik/presentation/pages/decider_view.dart';
 import 'package:svik/presentation/themes/app_theme.dart';
 
 import 'domain/usecases/auth/verify_session.dart';
@@ -38,12 +38,12 @@ class App extends StatelessWidget {
           return MaterialApp(
             initialRoute: '/',
             routes: {
-              "/":(context) => const DeceiderView(),
-              "/setting": (context) => SettingsView(),
-              "/settings/theme": (context) => SetThemeView(),
-              "/settings/about": (context) => AboutView(),
+              "/":(context) => const DeciderView(),
+              "/setting": (context) => const SettingsView(),
+              "/settings/theme": (context) => const SetThemeView(),
+              "/settings/about": (context) => const AboutView(),
               "/login":(context) => LoginView(),
-              "/signup":(context) => SignupPage(),
+              "/signup":(context) => const SignupPage(),
             },
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,

@@ -10,4 +10,7 @@ class AuthFailure extends Failure {
   AuthFailure({required this.message});
 }
 
-class SessionFailure extends Failure {}
+class SessionFailure extends Failure {
+  final String message;
+  SessionFailure({required this.message});
+}

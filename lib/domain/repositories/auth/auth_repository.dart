@@ -49,6 +49,6 @@ abstract class AuthRepository {
 
   Future<Either<AuthFailure,void>> logout();
 
-  Future<Either<Failure,SessionResultEntity>> verifySession();
+  Future<Either<SessionFailure,SessionResultEntity>> verifySession();
   
 }
