@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
+  TextEditingController nameController = TextEditingController();
+
+  TextEditingController emailController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
+
+  SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +48,7 @@ class SignupPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
-                // controller: nameController,
+                controller: nameController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Name',
@@ -52,7 +58,7 @@ class SignupPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
-                // controller: nameController,
+                controller: emailController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Email',
@@ -63,7 +69,7 @@ class SignupPage extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextField(
                 obscureText: true,
-                // controller: passwordController,
+                controller: passwordController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Password',
@@ -103,64 +109,3 @@ class SignupPage extends StatelessWidget {
     );
   }
 }
-
-Widget makeInput({label, obsureText = false}) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        label,
-        style: TextStyle(
-            fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
-      ),
-      SizedBox(
-        height: 5,
-      ),
-      TextField(
-        obscureText: obsureText,
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.grey,
-            ),
-          ),
-          border:
-              OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-        ),
-      ),
-      SizedBox(
-        height: 30,
-      )
-    ],
-  );
-}
-
-
-
-//  Column(
-//                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//                       children: [
-//                         SizedBox(height: 40,),
-//                         Text(
-//                           "Create an Account",
-//                           style: TextStyle(
-//                             fontSize: 30,
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                         SizedBox(
-//                           height: 15,
-//                         ),
-//                         Text(
-//                           "Connect with your friends today",
-//                           style: TextStyle(
-//                             fontSize: 15,
-//                             color: Colors.grey[700],
-//                           ),
-//                         ),
-//                         SizedBox(
-//                           height: 15,
-//                         )
-//                       ],
-//                     ),

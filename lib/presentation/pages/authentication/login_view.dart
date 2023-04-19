@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
-  LoginView({super.key});
-
-  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
+  
+  LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Login"),
-        // backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -46,7 +45,7 @@ class LoginView extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
-                controller: nameController,
+                controller: emailController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Email',
