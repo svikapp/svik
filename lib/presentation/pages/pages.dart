@@ -1,0 +1,10 @@
+export './authentication/login_view.dart';
+export './authentication/signup_view.dart';
+export './conversations_view/conversations_view.dart';
+export './decider_view.dart';
+export './feed_view/feed_view.dart';
+export './friend_requests_view/friend_requests_view.dart';
+export './homepage_view.dart';
+export './profile_view/profile_view.dart';
+export './search_view/search_view.dart';
+export './settings/settings.dart';

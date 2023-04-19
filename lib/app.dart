@@ -4,15 +4,10 @@ import 'package:svik/injection_container.dart';
 import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
 import 'package:svik/presentation/cubit/bottomnav/bottomnav_cubit.dart';
 import 'package:svik/presentation/cubit/theme/theme_cubit.dart';
-import 'package:svik/presentation/pages/authentication/login_view.dart';
-import 'package:svik/presentation/pages/settings/setting_view.dart';
-import 'package:svik/presentation/pages/settings/views/about_view/about_view.dart';
-import 'package:svik/presentation/pages/settings/views/set_theme_view/set_theme_view.dart';
-import 'package:svik/presentation/pages/decider_view.dart';
+import 'package:svik/presentation/routes/app_routes.dart';
 import 'package:svik/presentation/themes/app_theme.dart';
 
 import 'domain/usecases/auth/verify_session.dart';
-import 'presentation/pages/authentication/signup_view.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -36,15 +31,8 @@ class App extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {
           return MaterialApp(
-            initialRoute: '/',
-            routes: {
-              "/":(context) => const DeciderView(),
-              "/setting": (context) => const SettingsView(),
-              "/settings/theme": (context) => const SetThemeView(),
-              "/settings/about": (context) => const AboutView(),
-              "/login":(context) => LoginView(),
-              "/signup":(context) => const SignupPage(),
-            },
+            initialRoute: AppRoutes.home,
+            routes: AppRoutes.routes,
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
             themeMode: themeMode,
