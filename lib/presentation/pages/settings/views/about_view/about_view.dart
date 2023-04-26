@@ -1,3 +1,4 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -13,6 +14,11 @@ class AboutView extends StatelessWidget {
       ),
       body: Column(
         children: [
+          ListTile(
+            leading: Icon(Icons.people_sharp),
+            title: Text("Developers"),
+            onTap: () {},
+          ),
           ListTile(
             leading: Icon(Icons.developer_mode),
             title: Text("Software Licenses"),

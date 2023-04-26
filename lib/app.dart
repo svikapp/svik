@@ -31,7 +31,7 @@ class App extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {
           return MaterialApp(
-            initialRoute: AppRoutes.home,
+            initialRoute: AppRoutes.settingsTheme,
             routes: AppRoutes.routes,
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
