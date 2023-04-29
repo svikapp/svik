@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:svik/injection_container.dart';
 import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
+import 'package:svik/presentation/bloc/login/login_bloc.dart';
 import 'package:svik/presentation/cubit/bottomnav/bottomnav_cubit.dart';
 import 'package:svik/presentation/cubit/theme/theme_cubit.dart';
 import 'package:svik/presentation/routes/app_routes.dart';
@@ -26,7 +27,8 @@ class App extends StatelessWidget {
           create: (context) => AuthBloc(
             verifySession: sl<VerifySession>(),
           )..add(AppStarted()),
-        )
+        ),
+        BlocProvider(create: (context)=>LoginBloc())
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {
