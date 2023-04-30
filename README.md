@@ -1,5 +1,9 @@
-<h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">Svik 2</h1>
+<!-- <h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">Svik 2</h1> -->
 
+# [Svik](https://svik.netlify.app)
+
+
+Svik is a simple & personalized social app
 <p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">Compared to its predecessor, Svik 2 represents a major leap forward in terms of functionality and security.<br><br>
 While the original Svik app was certainly popular, it lacked a custom backend server and robust security features that are essential in today's mobile landscape. With its innovative features and custom backend server, Svik 2 is a secure and reliable choice for users who demand the best from their mobile apps.
 <br><br>
@@ -9,8 +13,8 @@ Whether you're a long-time Svik user or a newcomer to the platform, Svik 2 is th
 
 
 
-<h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">To clone this project</h1>
-
+<!-- <h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">To clone this project</h1> -->
+## To clone this project
 <p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">To clone this project, simply copy the below command and paste it in your command line interface : </p>
 
 ```bash
@@ -47,6 +51,14 @@ Here are the packages used in this Flutter project:
 
 
 ![](https://img.shields.io/pub/v/get_it?color=green&label=get_it)
+
+## Screenshots
+
+<img src="screenshots/signup.png" alt="Signup Page" height="400">
+
+<img src="screenshots/login.png" alt="Login Page" height="400">
+
+
 
 
 ## License

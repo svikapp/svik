@@ -2,12 +2,12 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:svik2/presentation/themes/app_theme.dart';
+import 'package:svik/presentation/themes/app_theme.dart';
 
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeMode> {
-  ThemeCubit() : super(ThemeMode.light);
+  ThemeCubit() : super(ThemeMode.system);
 
   void toggleTheme() {
     if (state == AppTheme.dark) {
