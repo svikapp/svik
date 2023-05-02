@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:svik/presentation/bloc/signup/signup_bloc.dart';
 
 class SignupPage extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
@@ -82,9 +84,39 @@ class SignupPage extends StatelessWidget {
             Container(
               height: 50,
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: ElevatedButton(
-                child: const Text('Signup'),
-                onPressed: () {},
+              child: BlocConsumer<SignupBloc, SignupState>(
+                listener: (context, state) {
+                  //TODO: Implement snackbar
+                  if(state is SignupSuccess){
+                    Navigator.pop(context);
+                  }
+                },
+                builder: (context, state) {
+                  return ElevatedButton(
+                    child: state is SignupLoading
+                        ? const SizedBox(
+                            height: 20.0,
+                            width: 20.0,
+                            child: CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.white),
+                              backgroundColor: Colors.transparent,
+                              strokeWidth: 4.0,
+                            ),
+                          )
+                        : const Text('Signup'),
+                    onPressed: () {
+                      BlocProvider.of<SignupBloc>(context).add(
+                        SignupButtonPressed(
+                          nameController.text,
+                          emailController.text,
+                          passwordController.text,
+                        ),
+                      );
+                      // Navigator.pop(context);
+                    },
+                  );
+                },
               ),
             ),
             Row(

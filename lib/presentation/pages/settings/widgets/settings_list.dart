@@ -125,8 +125,8 @@ class SettingsList extends StatelessWidget {
               style: TextStyle(color: Colors.red),
             ),
             onTap: () {
-              BlocProvider.of<AuthBloc>(context).add(LogOut());
               Navigator.pop(context);
+              BlocProvider.of<AuthBloc>(context).add(LogOut());
             },
           ),
         ])

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
 
 import '../../bloc/login/login_bloc.dart';
 
@@ -105,7 +106,12 @@ class LoginView extends StatelessWidget {
                 Container(
                   height: 50,
                   padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                  child: BlocBuilder<LoginBloc, LoginState>(
+                  child: BlocConsumer<LoginBloc, LoginState>(
+                    listener: (context, state) {
+                      // if(state is LoginSuccess){
+                      //   context.read<AuthBloc>().add(LogInUser());
+                      // }
+                    },
                     builder: (context, state) {
                       return ElevatedButton(
                         child: state is LoginLoading
@@ -123,7 +129,9 @@ class LoginView extends StatelessWidget {
                         onPressed: () {
                           BlocProvider.of<LoginBloc>(context).add(
                             LoginButtonPressed(
-                                emailController.text, passwordController.text),
+                              emailController.text,
+                              passwordController.text,
+                            ),
                           );
                         },
                       );

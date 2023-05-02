@@ -6,6 +6,9 @@ import 'package:dartz/dartz.dart';
 import 'package:svik/domain/entities/auth/session_result.dart';
 import 'package:svik/domain/repositories/auth/auth_repository.dart';
 
+
+/// Implements the [AuthRepository] methods
+/// login,logout,signup,verifySession methods
 class AuthRepositoryImpl implements AuthRepository {
   final AuthDataSource authDataSource;
   AuthRepositoryImpl({required this.authDataSource});
