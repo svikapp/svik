@@ -6,11 +6,12 @@ import 'package:svik/data/data_sources/auth/auth_api_client.dart';
 import 'package:svik/data/data_sources/auth/auth_datasource.dart';
 import 'package:svik/data/repositories/auth/auth_repository_impl.dart';
 import 'package:svik/domain/repositories/auth/auth_repository.dart';
+import 'package:svik/domain/usecases/auth/signup_user.dart';
 import 'package:svik/domain/usecases/auth/verify_session.dart';
-import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
 import 'package:svik/presentation/bloc/login/login_bloc.dart';
 
 import 'data/local/cache_helper.dart';
+import 'presentation/bloc/signup/signup_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -23,11 +24,12 @@ Future<void> init() async {
 
   // Blocs
   sl.registerLazySingleton<LoginBloc>(() => LoginBloc());
+  sl.registerLazySingleton<SignupBloc>(() => SignupBloc(signupUser: sl<SignupUser>()));
 
 
   // Usecases
   sl.registerLazySingleton<VerifySession>(() => VerifySession(authRepository: sl<AuthRepository>()));
-
+  sl.registerLazySingleton<SignupUser>(() => SignupUser(authRepository: sl<AuthRepository>()));
 
   // Repositories
   sl.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(authDataSource: sl()));
