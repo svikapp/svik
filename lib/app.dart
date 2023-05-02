@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:svik/injection_container.dart';
 import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
 import 'package:svik/presentation/bloc/login/login_bloc.dart';
+import 'package:svik/presentation/bloc/signup/signup_bloc.dart';
 import 'package:svik/presentation/cubit/bottomnav/bottomnav_cubit.dart';
 import 'package:svik/presentation/cubit/theme/theme_cubit.dart';
 import 'package:svik/presentation/routes/app_routes.dart';
@@ -24,10 +25,12 @@ class App extends StatelessWidget {
           create: (context) => ThemeCubit(),
         ),
         BlocProvider(create: (context)=>sl<LoginBloc>()),
+        BlocProvider(create: (context)=>sl<SignupBloc>()),
         BlocProvider(
           create: (context) => AuthBloc(
             verifySession: sl<VerifySession>(),
             loginBloc: BlocProvider.of<LoginBloc>(context),
+            signupBloc: BlocProvider.of<SignupBloc>(context)
           )..add(AppStarted()),
         ),
         
@@ -35,7 +38,7 @@ class App extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {
           return MaterialApp(
-            initialRoute: AppRoutes.home,
+            initialRoute: AppRoutes.decider,
             routes: AppRoutes.routes,
             theme: AppTheme.light,
             darkTheme: AppTheme.dark,
