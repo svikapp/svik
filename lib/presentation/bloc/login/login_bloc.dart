@@ -6,9 +6,9 @@ part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginInitial()) {
-    on<LoginButtonPressed>((event, emit)async {
+    on<LoginButtonPressed>((event, emit) async {
       emit(LoginLoading());
-      await Future.delayed(Duration(seconds: 5));
+      await Future.delayed(Duration(seconds: 2));
       emit(LoginSuccess());
     });
   }

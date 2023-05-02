@@ -23,12 +23,14 @@ class App extends StatelessWidget {
         BlocProvider(
           create: (context) => ThemeCubit(),
         ),
+        BlocProvider(create: (context)=>sl<LoginBloc>()),
         BlocProvider(
           create: (context) => AuthBloc(
             verifySession: sl<VerifySession>(),
+            loginBloc: BlocProvider.of<LoginBloc>(context),
           )..add(AppStarted()),
         ),
-        BlocProvider(create: (context)=>LoginBloc())
+        
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {

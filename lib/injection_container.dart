@@ -8,6 +8,7 @@ import 'package:svik/data/repositories/auth/auth_repository_impl.dart';
 import 'package:svik/domain/repositories/auth/auth_repository.dart';
 import 'package:svik/domain/usecases/auth/verify_session.dart';
 import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
+import 'package:svik/presentation/bloc/login/login_bloc.dart';
 
 import 'data/local/cache_helper.dart';
 
@@ -21,7 +22,7 @@ Future<void> init() async {
   dioClient.options.baseUrl = "http://localhost:3000";
 
   // Blocs
-  sl.registerLazySingleton<AuthBloc>(() => AuthBloc(verifySession: sl<VerifySession>()));
+  sl.registerLazySingleton<LoginBloc>(() => LoginBloc());
 
 
   // Usecases

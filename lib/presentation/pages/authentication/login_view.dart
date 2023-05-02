@@ -8,17 +8,28 @@ class LoginView extends StatelessWidget {
 
   TextEditingController passwordController = TextEditingController();
 
+  final _loginFormKey = GlobalKey<FormState>();
+
   LoginView({super.key});
+
+  void login(BuildContext context) {
+    final isValidated = _loginFormKey.currentState!.validate();
+    isValidated
+        ? BlocProvider.of<LoginBloc>(context).add(
+            LoginButtonPressed(emailController.text, passwordController.text),
+          )
+        : null;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login"),
-      ),
-      body: BlocBuilder<LoginBloc, LoginState>(
-        builder: (context, state) {
-          return Padding(
+        appBar: AppBar(
+          title: Text("Login"),
+        ),
+        body: Form(
+          key: _loginFormKey,
+          child: Padding(
             padding: const EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
@@ -50,23 +61,37 @@ class LoginView extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.all(10),
-                  child: TextField(
+                  child: TextFormField(
                     controller: emailController,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Email',
                     ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Enter email";
+                      } else if (!value.contains('@')) {
+                        return "Enter a valid email";
+                      }
+                    },
                   ),
                 ),
                 Container(
                   padding: const EdgeInsets.all(10),
-                  child: TextField(
+                  child: TextFormField(
                     obscureText: true,
                     controller: passwordController,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Password',
                     ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Enter password";
+                      } else if (value.length < 6) {
+                        return "Password should have 6 characters";
+                      }
+                    },
                   ),
                 ),
                 TextButton(
@@ -80,23 +105,27 @@ class LoginView extends StatelessWidget {
                 Container(
                   height: 50,
                   padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                  child: ElevatedButton(
-                    child: state is LoginLoading
-                        ? SizedBox(
-                            height: 20.0,
-                            width: 20.0,
-                            child: CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.white),
-                              backgroundColor: Colors.transparent,
-                              strokeWidth: 4.0,
-                            ),
-                          )
-                        : Text('Login'),
-                    onPressed: () {
-                      BlocProvider.of<LoginBloc>(context).add(
-                        LoginButtonPressed(
-                            emailController.text, passwordController.text),
+                  child: BlocBuilder<LoginBloc, LoginState>(
+                    builder: (context, state) {
+                      return ElevatedButton(
+                        child: state is LoginLoading
+                            ? const SizedBox(
+                                height: 20.0,
+                                width: 20.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Colors.white),
+                                  backgroundColor: Colors.transparent,
+                                  strokeWidth: 4.0,
+                                ),
+                              )
+                            : const Text('Login'),
+                        onPressed: () {
+                          BlocProvider.of<LoginBloc>(context).add(
+                            LoginButtonPressed(
+                                emailController.text, passwordController.text),
+                          );
+                        },
                       );
                     },
                   ),
@@ -119,9 +148,7 @@ class LoginView extends StatelessWidget {
                 ),
               ],
             ),
-          );
-        },
-      ),
-    );
+          ),
+        ));
   }
 }

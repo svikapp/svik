@@ -9,4 +9,4 @@ abstract class AuthEvent extends Equatable {
 
 class AppStarted extends AuthEvent {}
 
-class LoggedOut extends AuthEvent {}
+class LogOut extends AuthEvent {}
