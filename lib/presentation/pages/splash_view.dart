@@ -9,9 +9,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: FlutterLogo(
-          size: 40,
-        ),
+        child: Image.asset("assets/logo.png",height: 140,width: 140,)
       ),
     );
   }

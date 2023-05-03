@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
 
-import '../../bloc/login/login_bloc.dart';
+import '../../../injection_container.dart';
+import '../../app_snackbar.dart';
+import '../../blocs/login/login_bloc.dart';
 
 class LoginView extends StatelessWidget {
-  TextEditingController emailController = TextEditingController();
+  LoginView({super.key});
 
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   final _loginFormKey = GlobalKey<FormState>();
 
-  LoginView({super.key});
+  final _snackbar = sl.get<AppSnackbar>();
 
   void login(BuildContext context) {
     final isValidated = _loginFormKey.currentState!.validate();
     isValidated
         ? BlocProvider.of<LoginBloc>(context).add(
-            LoginButtonPressed(emailController.text, passwordController.text),
+            LoginButtonPressed(
+              emailController.text,
+              passwordController.text,
+            ),
           )
         : null;
   }
@@ -108,9 +113,9 @@ class LoginView extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                   child: BlocConsumer<LoginBloc, LoginState>(
                     listener: (context, state) {
-                      // if(state is LoginSuccess){
-                      //   context.read<AuthBloc>().add(LogInUser());
-                      // }
+                      if (state is LoginFailure) {
+                        _snackbar.showError(context, state.message);
+                      }
                     },
                     builder: (context, state) {
                       return ElevatedButton(
@@ -126,14 +131,7 @@ class LoginView extends StatelessWidget {
                                 ),
                               )
                             : const Text('Login'),
-                        onPressed: () {
-                          BlocProvider.of<LoginBloc>(context).add(
-                            LoginButtonPressed(
-                              emailController.text,
-                              passwordController.text,
-                            ),
-                          );
-                        },
+                        onPressed: () =>login(context),
                       );
                     },
                   ),

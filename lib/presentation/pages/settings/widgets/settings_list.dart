@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
+import 'package:svik/presentation/blocs/auth/auth_bloc.dart';
 import 'package:svik/presentation/pages/settings/widgets/settings_group.dart';
 
-import '../../../bloc/login/login_bloc.dart';
+import '../../../blocs/login/login_bloc.dart';
 
 class SettingsList extends StatelessWidget {
   SettingsList({super.key});

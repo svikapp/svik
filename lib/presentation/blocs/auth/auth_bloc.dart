@@ -5,8 +5,9 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:svik/core/usecases/usecase.dart';
+import 'package:svik/domain/usecases/auth/logout_user.dart';
 import 'package:svik/domain/usecases/auth/verify_session.dart';
-import 'package:svik/presentation/bloc/signup/signup_bloc.dart';
+import 'package:svik/presentation/blocs/signup/signup_bloc.dart';
 
 import '../login/login_bloc.dart';
 
@@ -15,12 +16,14 @@ part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final VerifySession verifySession;
+  final LogoutUser logoutUser;
   final LoginBloc loginBloc;
   final SignupBloc signupBloc;
   late StreamSubscription loginSubscription;
   late StreamSubscription signupSubscription;
   AuthBloc(
       {required this.verifySession,
+      required this.logoutUser,
       required this.loginBloc,
       required this.signupBloc})
       : super(AuthLoading()) {
@@ -55,8 +58,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     on<LogOut>((event, emit) async {
       emit(AuthLoading());
-      await Future.delayed(Duration(seconds: 2));
-      emit(UnAuthenticated());
+      final result = await logoutUser.call(NoParams());
+      final state = result.fold((l) => Authenticated(), (r) => UnAuthenticated());
+      emit(state);
     });
   }
 

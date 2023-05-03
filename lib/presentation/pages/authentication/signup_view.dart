@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:svik/presentation/bloc/signup/signup_bloc.dart';
+import 'package:svik/injection_container.dart';
+import 'package:svik/presentation/app_snackbar.dart';
+import 'package:svik/presentation/blocs/signup/signup_bloc.dart';
 
 class SignupPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-
-  TextEditingController emailController = TextEditingController();
-
-  TextEditingController passwordController = TextEditingController();
-
   SignupPage({super.key});
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  final _snackbar = sl.get<AppSnackbar>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // elevation: 0,
-        title: Text("Signup"),
+        title: const Text("Signup"),
       ),
       body: Padding(
         padding: EdgeInsets.all(10),
@@ -44,7 +45,7 @@ class SignupPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Container(
@@ -78,7 +79,7 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Container(
@@ -86,9 +87,11 @@ class SignupPage extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: BlocConsumer<SignupBloc, SignupState>(
                 listener: (context, state) {
-                  //TODO: Implement snackbar
                   if(state is SignupSuccess){
                     Navigator.pop(context);
+                  }
+                  else if(state is SignupFailure){
+                    _snackbar.showError(context,state.message);
                   }
                 },
                 builder: (context, state) {

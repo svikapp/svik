@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:svik/presentation/pages/homepage_view.dart';
 import 'package:svik/presentation/pages/authentication/login_view.dart';
 import 'package:svik/presentation/pages/splash_view.dart';
-import 'package:svik/presentation/routes/app_routes.dart';
 
-import '../bloc/auth/auth_bloc.dart';
+import '../blocs/auth/auth_bloc.dart';
 
 class DeciderView extends StatelessWidget {
   const DeciderView({super.key});

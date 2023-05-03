@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:svik/domain/usecases/auth/logout_user.dart';
 import 'package:svik/injection_container.dart';
-import 'package:svik/presentation/bloc/auth/auth_bloc.dart';
-import 'package:svik/presentation/bloc/login/login_bloc.dart';
-import 'package:svik/presentation/bloc/signup/signup_bloc.dart';
+import 'package:svik/presentation/blocs/auth/auth_bloc.dart';
+import 'package:svik/presentation/blocs/login/login_bloc.dart';
+import 'package:svik/presentation/blocs/signup/signup_bloc.dart';
 import 'package:svik/presentation/cubit/bottomnav/bottomnav_cubit.dart';
 import 'package:svik/presentation/cubit/theme/theme_cubit.dart';
 import 'package:svik/presentation/routes/app_routes.dart';
@@ -29,6 +30,7 @@ class App extends StatelessWidget {
         BlocProvider(
           create: (context) => AuthBloc(
             verifySession: sl<VerifySession>(),
+            logoutUser: sl<LogoutUser>(),
             loginBloc: BlocProvider.of<LoginBloc>(context),
             signupBloc: BlocProvider.of<SignupBloc>(context)
           )..add(AppStarted()),
