@@ -20,6 +20,16 @@ Svik is a simple & personalized social app
 * [Shared Preferences](https://pub.dev/packages/shared_preferences) for storing data like tokens,search history etc...
 * [BLoc](https://pub.dev/packages/flutter_bloc) for State Management
 
+
+| Feature         | Status       |
+|-----------------|--------------|
+| Login/Signup    | Completed    |
+| Basic Settings  | Completed    |
+| Search Users    | Under Dev    |
+| Messaging       | Under Dev    |
+| Post sharing    | Under Dev    |
+
+
 <!-- ## Dependencies
 
 Here are the packages used in this Flutter project:
