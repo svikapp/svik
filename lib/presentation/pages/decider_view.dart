@@ -15,7 +15,7 @@ class DeciderView extends StatelessWidget {
       builder: (context, state) {
         print(state);
         if(state is AuthLoading){
-          return SplashView();
+          return const SplashView();
         }
         else if(state is Authenticated){
           return const HomePage();

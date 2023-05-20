@@ -20,7 +20,7 @@ class SignupPage extends StatelessWidget {
         title: const Text("Signup"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: ListView(
           children: [
             const SizedBox(

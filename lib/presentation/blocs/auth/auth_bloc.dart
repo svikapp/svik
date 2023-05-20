@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:svik/core/usecases/usecase.dart';
 import 'package:svik/domain/usecases/auth/logout_user.dart';

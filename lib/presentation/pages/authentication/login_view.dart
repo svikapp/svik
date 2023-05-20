@@ -31,7 +31,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Login"),
+          title: const Text("Login"),
         ),
         body: Form(
           key: _loginFormKey,
@@ -39,7 +39,7 @@ class LoginView extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -47,12 +47,12 @@ class LoginView extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Hello Again!',
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -62,7 +62,7 @@ class LoginView extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Container(
@@ -79,6 +79,7 @@ class LoginView extends StatelessWidget {
                       } else if (!value.contains('@')) {
                         return "Enter a valid email";
                       }
+                      return null;
                     },
                   ),
                 ),
@@ -97,6 +98,7 @@ class LoginView extends StatelessWidget {
                       } else if (value.length < 6) {
                         return "Password should have 6 characters";
                       }
+                      return null;
                     },
                   ),
                 ),

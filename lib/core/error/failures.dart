@@ -14,3 +14,9 @@ class SessionFailure extends Failure {
   final String message;
   SessionFailure({required this.message});
 }
+
+
+class UserFailure extends Failure {
+  final String message;
+  UserFailure({required this.message});
+}

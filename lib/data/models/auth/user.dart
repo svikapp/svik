@@ -1,7 +1,7 @@
 import 'package:svik/domain/entities/auth/user.dart';
 
-class UserModel extends UserEntity {
-  const UserModel({
+class User extends UserEntity {
+  const User({
     required super.id,
     required super.username,
     required super.photourl,
@@ -17,8 +17,8 @@ class UserModel extends UserEntity {
     };
   }
 
-  factory UserModel.fromJson(Map<String, dynamic> map) {
-    return UserModel(
+  factory User.fromJson(Map<String, dynamic> map) {
+    return User(
       id: map['user_id'] as String,
       username: map['user_username'] as String,
       photourl: map['user_photourl'] as String,
