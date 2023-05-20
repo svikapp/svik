@@ -1,84 +1,33 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:svik/presentation/blocs/auth/auth_bloc.dart';
 import 'package:svik/presentation/pages/settings/widgets/settings_group.dart';
 
-import '../../../blocs/login/login_bloc.dart';
 
 class SettingsList extends StatelessWidget {
   SettingsList({super.key});
 
-  final List<List<Widget>> _settingsList = [
-    [
-      ListTile(
-        leading: Icon(EvaIcons.personOutline),
-        title: Text("Account"),
-        onTap: () {},
-      ),
-      ListTile(
-        leading: Icon(EvaIcons.heartOutline),
-        title: Text("Donate"),
-        onTap: () {},
-      ),
-    ],
-    [
-      ListTile(
-        leading: Icon(EvaIcons.sunOutline),
-        title: Text("Appearance"),
-        // onTap: ()=>Navigator.pushNamed(, "/settings/theme"),
-      ),
-    ],
-    [
-      ListTile(
-        leading: Icon(EvaIcons.questionMarkCircleOutline),
-        title: Text("Help"),
-        onTap: () {},
-      ),
-      ListTile(
-        leading: Icon(EvaIcons.inboxOutline),
-        title: Text("Invite Friends"),
-        onTap: () {},
-      ),
-      ListTile(
-        leading: Icon(EvaIcons.infoOutline),
-        title: Text("About"),
-        onTap: () {},
-      ),
-    ],
-  ];
-  Widget divider = const Divider(
+  final Widget divider = const Divider(
     height: 10,
     thickness: 2,
   );
+
+  
   @override
   Widget build(BuildContext context) {
-    // return ListView.separated(
-    //   itemBuilder: (context, index) {
-    //     return SettingsGroup(children: _settingsList[index]);
-    //   },
-    //   separatorBuilder: (context, index) {
-    //     return const Divider(
-    //       height: 10,
-    //       // thickness: 2,
-    //     );
-    //   },
-    //   itemCount: _settingsList.length,
-    // );
     return ListView(
       children: [
         SettingsGroup(
           children: [
             ListTile(
-              leading: Icon(EvaIcons.personOutline),
-              title: Text("Account"),
+              leading: const Icon(EvaIcons.personOutline),
+              title: const Text("Account"),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(EvaIcons.heartOutline),
-              title: Text("Donate"),
+              leading: const Icon(EvaIcons.heartOutline),
+              title: const Text("Donate"),
               onTap: () {},
             ),
           ],
@@ -87,8 +36,8 @@ class SettingsList extends StatelessWidget {
         SettingsGroup(
           children: [
             ListTile(
-              leading: Icon(EvaIcons.sunOutline),
-              title: Text("Appearance"),
+              leading: const Icon(EvaIcons.sunOutline),
+              title: const Text("Appearance"),
               onTap: () => Navigator.pushNamed(context, "/settings/theme"),
             ),
           ],
@@ -97,18 +46,18 @@ class SettingsList extends StatelessWidget {
         SettingsGroup(
           children: [
             ListTile(
-              leading: Icon(EvaIcons.questionMarkCircleOutline),
-              title: Text("Help"),
+              leading: const Icon(EvaIcons.questionMarkCircleOutline),
+              title: const Text("Help"),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(EvaIcons.inboxOutline),
-              title: Text("Invite Friends"),
+              leading: const Icon(EvaIcons.inboxOutline),
+              title: const Text("Invite Friends"),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(EvaIcons.infoOutline),
-              title: Text("About"),
+              leading: const Icon(EvaIcons.infoOutline),
+              title: const Text("About"),
               onTap: () => Navigator.pushNamed(context, "/settings/about"),
             ),
           ],
@@ -116,11 +65,11 @@ class SettingsList extends StatelessWidget {
         divider,
         SettingsGroup(children: [
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               EvaIcons.logOut,
               color: Colors.red,
             ),
-            title: Text(
+            title: const Text(
               "Log out",
               style: TextStyle(color: Colors.red),
             ),
