@@ -5,42 +5,22 @@
 
 Svik is a simple & personalized social app
 
-Compared to its [predecessor](https://github.com/saffron-codes/svik) , Svik 2 represents a major leap forward in terms of functionality and security.
-While the original Svik app was certainly popular, it lacked a custom backend server and robust security features that are essential in today's mobile landscape. With its innovative features and custom backend server, Svik 2 is a secure and reliable choice for users who demand the best from their mobile apps.
-
-From an advertising perspective, this means that Svik 2 is an even more attractive platform for brands and marketers, as they can be confident that their messages are reaching a highly engaged and secure audience.
-<br><br>
-Whether you're a long-time Svik user or a newcomer to the platform, Svik 2 is the clear choice for those who want the best in mobile technology and advertising. Try it today and experience the future of mobile apps.</p>
+🔴 **Under development**
 
 
+![GitHub last commit](https://img.shields.io/github/last-commit/svikapp/svikapp)
 
-<!-- <h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">To clone this project</h1> -->
-## To clone this project
-<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">To clone this project, simply copy the below command and paste it in your command line interface : </p>
 
-```bash
-git clone https://github.com/svikapp/svik.git
-```
+### Tech. stack
 
-## To retrieve flutter packages
+* [Dart](https://dart.dev)
+* [flutter](https://flutter.dev) Google UI toolkit for building beautiful and native applications
+* [GetIt](https://pub.dev/packages/get_it) for dependency injection
+* [Dio](https://pub.dev/packages/dio) for http requests
+* [Shared Preferences](https://pub.dev/packages/shared_preferences) for storing data like tokens,search history etc...
+* [BLoc](https://pub.dev/packages/flutter_bloc) for State Management
 
-<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">To retrieve the required packages for a Flutter project, you can use the below command :</p>
-
-```bash
-flutter pub get
-```
-
-<h1 style="color: red; text-shadow: 2px 2px 2px #000000;font-family: Times New Roman;">To launch the project</h1>
-
-<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">To run the Flutter project, simply navigate to the project directory and use the below command : </p>
-
-```bash
-flutter run
-```
-
-<p style=" font-size: 16px;font-family: Arial, sans-serif; line-height: 1.5; padding: 10px;">in your terminal or command prompt.</p>
-
-## Dependencies
+<!-- ## Dependencies
 
 Here are the packages used in this Flutter project:
 
@@ -54,7 +34,7 @@ Here are the packages used in this Flutter project:
 ![](https://img.shields.io/pub/v/get_it?color=green&label=get_it)
 
 
-![Pub Version](https://img.shields.io/pub/v/eva_icons_flutter?label=eva_icons_flutter)
+![Pub Version](https://img.shields.io/pub/v/eva_icons_flutter?label=eva_icons_flutter) -->
 
 
 ## Screenshots
@@ -68,3 +48,4 @@ Here are the packages used in this Flutter project:
 
 ## License
 This project is licensed under the Apache License 2.0. You can read the full text of the license [here](https://www.apache.org/licenses/LICENSE-2.0).
+
